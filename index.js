@@ -1,15 +1,22 @@
-let userOrder = prompt("please enter your flavors separated by a comma");
+let userOrder = prompt(
+  "please enter your flavors separated by a comma, we finna make some gud Froyo for ya!"
+);
 
-let flavors = userOrder.split(",");
+let flavorsArray = userOrder.split(",");
 
-console.log(flavors);
+console.log(flavorsArray);
 
-function countFlavors(flavors) {
-  let flavorObj = {};
-  for (let i = 0; i < flavors.length; i++) {
-    flavorObj[i] = 10;
-    return flavorObj;
+let flavorObj = {};
+
+function countFlavors(flavorsArray) {
+  for (const flavor of flavorsArray) {
+    if (flavorObj[flavor]) {
+      flavorObj[flavor] = +1;
+    } else {
+      flavorObj[flavor] = 1;
+    }
   }
+  return flavorObj;
 }
 
-console.log(countFlavors(flavors));
+console.table(countFlavors(flavorsArray));
