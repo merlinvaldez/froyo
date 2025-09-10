@@ -6,12 +6,11 @@ let flavorsArray = userOrder.split(",");
 
 console.log(flavorsArray);
 
-let flavorObj = {};
-
 function countFlavors(flavorsArray) {
+  let flavorObj = {};
   for (const flavor of flavorsArray) {
     if (flavorObj[flavor]) {
-      flavorObj[flavor] = +1;
+      flavorObj[flavor] += 1;
     } else {
       flavorObj[flavor] = 1;
     }
